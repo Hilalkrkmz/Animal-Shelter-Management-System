@@ -30,7 +30,7 @@ Barinak-Yonetim-Sistemi/
  ├── src/
  ├── templates/
  ├── database/
- │    └── schema.sql
+ │    └── barinak.sql
  ├── screenshots/
  ├── README.md
 ```
