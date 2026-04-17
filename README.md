@@ -23,5 +23,12 @@ This project is a web-based application developed to manage animal shelter opera
 ## Screenshots
 ![main Page](sc.png)
 
+## Database
+The database schema is included in the `database/.sql` file.
+
+To set up the database:
+1. Create a PostgreSQL database
+2. Run the SQL script
+
 ## 📌 Notes
 - Adopted animals cannot be deleted due to database constraints and triggers.
