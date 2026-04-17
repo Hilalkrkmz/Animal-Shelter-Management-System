@@ -24,7 +24,7 @@ This project is a web-based application developed to manage animal shelter opera
 ![main Page](sc.png)
 
 ## Database
-The database schema is included in the `database/.sql` file.
+The database schema is included in the `database/barinak.sql` file.
 
 To set up the database:
 1. Create a PostgreSQL database
