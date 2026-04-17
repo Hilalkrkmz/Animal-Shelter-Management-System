@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Barınak Yönetim Sistemi</title>
+
+    <style>
+        body { font-family: Arial; background:#f4f6f9; padding:20px; }
+        .container { max-width:1200px; margin:auto; }
+
+        .header { background:white; padding:20px; border-radius:10px; display:flex; justify-content:space-between; margin-bottom:20px; }
+
+        .stats { display:flex; gap:20px; margin-bottom:20px; }
+        .card { flex:1; background:white; padding:15px; border-radius:10px; text-align:center; }
+
+        table { width:100%; background:white; border-collapse:collapse; }
+        th { background:#2c3e50; color:white; padding:10px; }
+        td { padding:10px; border-bottom:1px solid #ddd; text-align:center; }
+
+        .btn { padding:6px 10px; border:none; border-radius:5px; color:white; cursor:pointer; }
+        .sil { background:red; }
+        .ekle { background:green; }
+        .sahip { background:#27ae60; }
+    </style>
+</head>
+
+<body>
+<div class="container">
+
+    <div class="header">
+        <h2>🐾 Barınak Yönetim Sistemi</h2>
+    </div>
+
+    <div class="stats">
+        <div class="card">
+            <h3>Toplam Hayvan</h3>
+            <h1 th:text="${toplamHayvan}"></h1>
+        </div>
+        <div class="card">
+            <h3>Aktif Başvuru</h3>
+            <h1 th:text="${aktifBasvuru}"></h1>
+        </div>
+    </div>
+
+    <h3>Yeni Hayvan Ekle</h3>
+    <form action="/ekle" method="post">
+        <input name="ad" placeholder="Ad" required>
+        <input name="tur" placeholder="Tür" required>
+        <input name="yas" type="number" placeholder="Yaş" required>
+        <input name="cinsiyet" placeholder="Cinsiyet" required>
+        <input name="cins" placeholder="Cins">
+        <input name="saglik" placeholder="Sağlık">
+        <button class="ekle">Ekle</button>
+    </form>
+
+    <h3>Hayvan Listesi</h3>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Ad</th>
+            <th>Tür (Cins)</th>
+            <th>Yaş</th>
+            <th>Durum</th>
+            <th>Sahiplendir</th>
+            <th>Sil</th>
+        </tr>
+
+        <tr th:each="h : ${hayvanlar}">
+            <td th:text="${h.hayvanid}"></td>
+            <td th:text="${h.ad}"></td>
+            <td th:text="${h.tur + ' (' + h.cins + ')'}"></td>
+            <td th:text="${h.yas}"></td>
+            <td th:text="${h.durum}"></td>
+
+            <td>
+                <form action="/sahiplendir" method="post">
+                    <input type="hidden" name="id" th:value="${h.hayvanid}">
+                    <button class="btn sahip">Sahiplendir</button>
+                </form>
+            </td>
+
+            <td>
+                <form action="/sil" method="post">
+                    <input type="hidden" name="id" th:value="${h.hayvanid}">
+                    <button class="btn sil">Sil</button>
+                </form>
+            </td>
+        </tr>
+    </table>
+
+</div>
+</body>
+</html>
