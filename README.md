@@ -21,7 +21,7 @@ This project is a web-based application developed to manage animal shelter opera
 - Triggers to enforce business rules
 
 ## Screenshots
-sc.png
+![main Page](sc.png)
 
 ## 📌 Notes
 - Adopted animals cannot be deleted due to database constraints and triggers.
