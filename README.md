@@ -23,6 +23,18 @@ This project is a web-based application developed to manage animal shelter opera
 ## Screenshots
 ![main Page](sc.png)
 
+## 📁 Project Structure
+
+```
+Barinak-Yonetim-Sistemi/
+ ├── src/
+ ├── templates/
+ ├── database/
+ │    └── schema.sql
+ ├── screenshots/
+ ├── README.md
+```
+
 ## Database
 The database schema is included in the `database/barinak.sql` file.
 
