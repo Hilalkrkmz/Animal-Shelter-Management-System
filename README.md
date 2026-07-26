@@ -44,3 +44,7 @@ To set up the database:
 
 ## 📌 Notes
 - Adopted animals cannot be deleted due to database constraints and triggers.
+
+## License
+
+This project was developed for educational purposes.
